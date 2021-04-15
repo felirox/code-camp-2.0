@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Features - Brand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/simple-line-icons.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Basic-fancyBox-Gallery-v2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/best-carousel-slide.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Carousel_Image_Slider-1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Carousel_Image_Slider.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Highlight-Clean-1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Highlight-Clean.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Team-Grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vanilla-zoom.min.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">Encrypton</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('home')  }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active d-flex float-start" href="{{ url_for('encrypt')  }}" style="color: var(--bs-primary);">Encrypt a file</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('decrypt')  }}">decrypt a file</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about')  }}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contact')  }}">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <section class="clean-block features">
+            <div class="container">
+                <section class="highlight-clean">
+                    <form action = "/decrypt" method = "POST" enctype="multipart/form-data">  
+                        <div class="container">
+                            <div class="intro">
+                                <h2 class="text-center">Decrypt</h2>
+                                <p class="text-center">First, enter the password with which you want to decrypt the file. <br>Click the button below to select the file to be decrypted.</p>
+                            </div>
+                            <form action="" method=post enctype=multipart/form-data>
+                                <div id="megah" class="buttons"><input type=file name=file></div>
+                            <div id="megah" class="buttons"><input class="bg-light border-primary visible" name="query" type="password" placeholder="enter decryption password" autofocus="" autocomplete="on" required="" minlength="5">
+                                <div class="buttons"></div>
+                            </div>
+                        </div>
+                        <div class="buttons"><input type=submit value='Decrypt!' class="btn btn-primary" role="button" href="#"></a></div>
+                </section>
+            </div>
+            <section class="clean-block features">
+                <div class="container-fluid">
+                    <div class="block-heading">
+                        <h2 class="text-info">Features</h2>
+                        <p>Our Application contains state-of-the-art privacy and encryption features built in to provide you with the best service possibe</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-5 feature-box"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" class="icon">
+                                <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"></path>
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12H19C19 15.866 15.866 19 12 19V22Z" fill="currentColor"></path>
+                                <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="currentColor"></path>
+                            </svg>
+                            <h4>Completely Online</h4>
+                            <p>Gone are the days when encrypting a file required multiple applications to be installed on both the host and receiver computers. It can be used anywhere, so long as you have internet</p>
+                        </div>
+                        <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+                            <h4>Same Format</h4>
+                            <p>The format of the encrypted file is identical to that of the original. Upload encrypted files to locations that only accept specific file types. <br>Keep the file hidden in plain sight.</p>
+                        </div>
+                        <div class="col-md-5 feature-box"><i class="icon-screen-smartphone icon"></i><i class="icon-screen-smartphone icon"></i>
+                            <h4>Responsive PWA</h4>
+                            <p>This application is a Progressive Web Application. This makes it possible to install and use this app easily through both mobile and computer with 0 local storage utilized.</p>
+                        </div>
+                        <div class="col-md-5 feature-box"><i class="icon-refresh icon"></i>
+                            <h4>Open Source</h4>
+                            <p>This product is open-sourced and all files uploaded are deleted as soon as the work is done. Anyone can contribute in developing this product. View the source code here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2021 Niran N &amp; Nisha S</p>
+        </div>
+    </footer>
+    <div class="buttons"></div>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js')  }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/smart-forms.min.js')  }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/vanilla-zoom.js')  }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/theme.js')  }}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/404.js')  }}"></script>
+</body>
+
+</html>
