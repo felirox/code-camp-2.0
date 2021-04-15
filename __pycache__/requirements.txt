@@ -2,3 +2,4 @@ flask
 pyAesCrypt
 glob
 werkzeug
+werkzeug.utils
