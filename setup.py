@@ -66,8 +66,6 @@ def return_files_tut(filename):
 
     return send_file(file_path_out, as_attachment=True, attachment_filename='')
     files = glob.glob('uploads/filename')
-    for f in files:
-        os.remove(f)
 
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
@@ -129,8 +127,6 @@ def return_files_tut_dec(filename):
 
     return send_file(file_path_out, as_attachment=True, attachment_filename='')
     files = glob.glob('uploads/filename')
-    for f in files:
-        os.remove(f)
 
 
 @app.errorhandler(404)
