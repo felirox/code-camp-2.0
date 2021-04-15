@@ -11,9 +11,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
-files = glob.glob('uploads/*')
-for f in files:
-    os.remove(f)
 
 @app.route('/')
 def home():
@@ -30,6 +27,9 @@ def contact():
 
 @app.route('/encrypt', methods=['GET', 'POST'])
 def encrypt():
+    files = glob.glob('uploads/*')
+    for f in files:
+        os.remove(f)
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
