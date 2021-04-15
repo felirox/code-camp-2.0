@@ -4,16 +4,11 @@ from flask import Flask,flash,request,redirect,send_file,render_template
 import pyAesCrypt
 import glob
 bufferSize = 64 * 1024
-UPLOAD_FOLDER = 'uploads/'
+UPLOAD_FOLDER = 'tmp/'
 # web: gunicorn setup:app
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
-
-files = glob.glob('uploads/*')
-for f in files:
-    os.remove(f)
 
 @app.route('/')
 def home():
@@ -65,7 +60,8 @@ def return_files_tut(filename):
     file_path_out = UPLOAD_FOLDER + filename#.rsplit('.', 1)[0] +"- encrypted ." + filename.rsplit('.', 1)[1]
 
     return send_file(file_path_out, as_attachment=True, attachment_filename='')
-    files = glob.glob('uploads/filename')
+    
+
 
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
@@ -126,7 +122,6 @@ def return_files_tut_dec(filename):
     file_path_out = UPLOAD_FOLDER + filename#.rsplit('.', 1)[0] +"- encrypted ." + filename.rsplit('.', 1)[1]
 
     return send_file(file_path_out, as_attachment=True, attachment_filename='')
-    files = glob.glob('uploads/filename')
 
 
 @app.errorhandler(404)
