@@ -1,5 +1,4 @@
 flask
 pyAesCrypt
-glob
+glob2
 werkzeug
-werkzeug.utils
