@@ -2,3 +2,4 @@ flask
 pyAesCrypt
 glob2
 werkzeug
+gunicorn
