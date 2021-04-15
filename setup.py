@@ -11,6 +11,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 
+files = glob.glob('uploads/*')
+for f in files:
+    os.remove(f)
 
 @app.route('/')
 def home():
@@ -27,9 +30,6 @@ def contact():
 
 @app.route('/encrypt', methods=['GET', 'POST'])
 def encrypt():
-    files = glob.glob('uploads/*')
-    for f in files:
-        os.remove(f)
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -65,6 +65,9 @@ def return_files_tut(filename):
     file_path_out = UPLOAD_FOLDER + filename#.rsplit('.', 1)[0] +"- encrypted ." + filename.rsplit('.', 1)[1]
 
     return send_file(file_path_out, as_attachment=True, attachment_filename='')
+    files = glob.glob('uploads/filename')
+        for f in files:
+        os.remove(f)
 
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
@@ -125,6 +128,9 @@ def return_files_tut_dec(filename):
     file_path_out = UPLOAD_FOLDER + filename#.rsplit('.', 1)[0] +"- encrypted ." + filename.rsplit('.', 1)[1]
 
     return send_file(file_path_out, as_attachment=True, attachment_filename='')
+    files = glob.glob('uploads/filename')
+        for f in files:
+        os.remove(f)
 
 
 @app.errorhandler(404)
