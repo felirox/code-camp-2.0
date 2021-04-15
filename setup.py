@@ -5,7 +5,7 @@ import pyAesCrypt
 import glob
 bufferSize = 64 * 1024
 UPLOAD_FOLDER = 'uploads/'
-
+# web: gunicorn setup:app
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -133,4 +133,4 @@ def not_found(e):
   return render_template("404.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
